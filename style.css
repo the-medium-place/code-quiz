@@ -1,0 +1,45 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+    /* font-family: 'Monofett', cursive; */
+}
+
+body {
+    background-image: url("./images/turtles-background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50%;
+  }
+
+
+
+/* hide the questions and ending pages by default*/
+.question, #end-page {
+    background-color: azure;
+    display: none;
+    width: 80%;
+    height: 80%;
+    border:3px solid blue;
+    margin: 10px auto auto auto;
+}
+
+#start-page {
+    background-color: azure;
+    width: 80%;
+    height: 80%;
+    border: 3px dotted cyan;
+    margin: 10px auto auto auto;
+}
+
+#start {
+    background-color: darkred;
+    color: white;
+    border: 1px solid black;
+    text-shadow: 2px 2px rgb(58, 0, 0);
+}
+
+#answers {
+    justify-content: space-around;
+}
+
+
+

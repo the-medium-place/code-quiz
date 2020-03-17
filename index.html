@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Time!!</title>
+    <!-- bootstrap css link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- css link -->
+    <link rel="stylesheet" href="style.css">
+    <!-- google fonts link -->
+    <link href="https://fonts.googleapis.com/css?family=Monofett|Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- NAVBAR WITH TIMER -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="highscores.html">View Highscores</a>
+        <div class="navbar">
+            <span id="score">
+            </span>
+        </div>
+        <div class="navbar">
+            <!-- <span class="navbar-toggler" data-toggle="collapse" data-target="#timer-text" id="timer-text"></span> -->
+            <span class="ml-auto mr-auto" id="timer-text">
+            </span>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <div class="container">
+
+        <!-- START PAGE -->
+        <div id="start-page" class="ml-auto p-3">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto text-center">
+                    <h1>
+                        Test test test
+                    </h1>
+                    <h4>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem sapiente saepe magni nobis
+                        ullam, incidunt ut? Officiis eligendi accusantium ullam! Tempore et consequatur omnis expedita
+                        quasi minus accusantium corrupti cum.
+                    </h4>
+                    <button type="button" class="btn btn-primary btn-lg" id="start">Start Quiz</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- BEGIN QUESTION DIVS -->
+        <div id="question-divs">
+            <!-- container for all question divs -->
+
+            <!-- question 1 -->
+            <div class="question" id="q0">
+                <div class="col-md-8 ml-auto mr-auto text-center">
+                    <h3 id="question-header">question 1</h3>
+                    <br>
+                    <p id="question-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo tempora eaque consectetur unde
+                        distinctio velit, architecto at molestiae laboriosam atque quam delectus, aperiam molestias quae
+                        praesentium veritatis soluta hic ullam!
+                    </p>
+                    <div class="row" id="answers">
+                        <div class="col text-center m-auto">
+                            <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="correct">correct</button>
+
+                            <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong1">wrong 1</button>
+
+                            <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong2">wrong 3</button>
+
+                            <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong3">wrong 3</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- question 2 -->
+            <div class="question" id="q1">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h3>question 2</h3>
+                        <br>
+                        <p>
+                            2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, repudiandae ipsa odit
+                            dicta
+                            quia dolorum nostrum, eius esse odio dolorem corporis placeat impedit reiciendis illum
+                            aspernatur necessitatibus ea modi quas!
+                        </p>
+                        <div class="row" id="answers">
+                            <div class="col text-center m-auto">
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="correct">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong1">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong2">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong3">test1234test
+                                    test test</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- question 3 -->
+            <div class="question" id="q2">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h3>question 3</h3>
+                        <br>
+                        <p>
+                            3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, repudiandae ipsa odit
+                            dicta
+                            quia dolorum nostrum, eius esse odio dolorem corporis placeat impedit reiciendis illum
+                            aspernatur necessitatibus ea modi quas!
+                        </p>
+                        <div class="row" id="answers">
+                            <div class="col text-center m-auto">
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="correct">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong1">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong2">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong3">test1234test
+                                    test test</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- question 4 -->
+            <div class="question" id="q3">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h3>question 4</h3>
+                        <br>
+                        <p>
+                            4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, repudiandae ipsa odit
+                            dicta
+                            quia dolorum nostrum, eius esse odio dolorem corporis placeat impedit reiciendis illum
+                            aspernatur necessitatibus ea modi quas!
+                        </p>
+                        <div class="row" id="answers">
+                            <div class="col text-center m-auto">
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="correct">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong1">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong2">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong3">test1234test
+                                    test test</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- question 5 -->
+            <div class="question" id="q4">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h3>question 5</h3>
+                        <br>
+                        <p>
+                            5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, repudiandae ipsa odit
+                            dicta
+                            quia dolorum nostrum, eius esse odio dolorem corporis placeat impedit reiciendis illum
+                            aspernatur necessitatibus ea modi quas!
+                        </p>
+                        <div class="row" id="answers">
+                            <div class="col text-center m-auto">
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="correct">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong1">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong2">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong3">test1234test
+                                    test test</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- question 6 -->
+            <div class="question" id="q5">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h3>question 6</h3>
+                        <br>
+                        <p>
+                            5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, repudiandae ipsa odit
+                            dicta
+                            quia dolorum nostrum, eius esse odio dolorem corporis placeat impedit reiciendis illum
+                            aspernatur necessitatibus ea modi quas!
+                        </p>
+                        <div class="row" id="answers">
+                            <div class="col text-center m-auto">
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="correct">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong1">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong2">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong3">test1234test
+                                    test test</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- question 7 -->
+            <div class="question" id="q6">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h3>question 7</h3>
+                        <br>
+                        <p>
+                            5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, repudiandae ipsa odit
+                            dicta
+                            quia dolorum nostrum, eius esse odio dolorem corporis placeat impedit reiciendis illum
+                            aspernatur necessitatibus ea modi quas!
+                        </p>
+                        <div class="row" id="answers">
+                            <div class="col text-center m-auto">
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="correct">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong1">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong2">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong3">test1234test
+                                    test test</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- question 8 -->
+            <div class="question" id="q7">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h3>question 8</h3>
+                        <br>
+                        <p>
+                            5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, repudiandae ipsa odit
+                            dicta
+                            quia dolorum nostrum, eius esse odio dolorem corporis placeat impedit reiciendis illum
+                            aspernatur necessitatibus ea modi quas!
+                        </p>
+                        <div class="row" id="answers">
+                            <div class="col text-center m-auto">
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="correct">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong1">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong2">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong3">test1234test
+                                    test test</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- question 9 -->
+            <div class="question" id="q8">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h3>question 9</h3>
+                        <br>
+                        <p>
+                            5 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, repudiandae ipsa odit
+                            dicta
+                            quia dolorum nostrum, eius esse odio dolorem corporis placeat impedit reiciendis illum
+                            aspernatur necessitatibus ea modi quas!
+                        </p>
+                        <div class="row" id="answers">
+                            <div class="col text-center m-auto">
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="correct">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong1">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong2">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong3">test1234test
+                                    test test</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- question 10 -->
+            <div class="question" id="q9">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h3>question 10</h3>
+                        <br>
+                        <p>
+                            10 Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, repudiandae ipsa odit
+                            dicta
+                            quia dolorum nostrum, eius esse odio dolorem corporis placeat impedit reiciendis illum
+                            aspernatur necessitatibus ea modi quas!
+                        </p>
+                        <div class="row" id="answers">
+                            <div class="col text-center m-auto">
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="correct">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong1">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong2">test1234test
+                                    test test</button>
+
+                                <button type="button" class="btn-primary btn-lg mr-auto mb-2" id="wrong3">test1234test
+                                    test test</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END QUESTION PAGES -->
+
+        </div>
+        <!-- END OF QUIZ PAGE -->
+        <div id="end-page">
+            <div class="col text-center">
+                <h1>
+                    END PAGE
+                </h1>
+                <h3>
+                    <span id="final-score"></span>
+                    <br>
+                    <span id="userName"></span>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <!-- js link -->
+    <script src="logic2.js"></script>
+    <!-- bootstrap js link -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
