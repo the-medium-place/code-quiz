@@ -3,6 +3,20 @@
 ## UW Code Bootcamp Week 3 Assignment - Due 3/17/2020
 ## Happy St. Patrick's Day!
 
+## Project Description
+
+My Turtles Code Quiz is functioning quiz game.  When the start button is pressed the user is presented with a series of knowledge questions about the Teenage Mutant Ninja Turtles! For each correct answer, one point is added to the user's total.  For each Incorrect answer, **5 seconds are removed from the clock!** 
+
+After the timer runs out, you can enter a name to post your score to the High Scores Page!
+
+ [Click Here](https://the-medium-place.github.io/code-quiz/) to view the deployed project.
+
+ ![Start Page Screenshot](./images/start-screen.PNG)
+
+ ![High Score Screenshot](./images/highscore-screen.PNG)
+
+
+
 ## Overall Thoughts
 
 This project was the bane of my existence for the last several days and countless hours.  This week officially slammed me face-first into the wall of my previous knowledge, but I've worked very hard and I'm proud of what I created. Thanks for taking a look!
