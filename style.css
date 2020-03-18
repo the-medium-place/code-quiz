@@ -63,8 +63,18 @@ body {
 }
 
 #score-list {
-    width: 85%;
+  
+    width: 100%;
+    
     margin: 0 auto;
+    margin-left: 15px;
 }
 
+
+.score-list {
+
+    width: 85%;
+    margin-left: 3px;
+    margin-right: auto;
+}
 

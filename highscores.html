@@ -33,17 +33,24 @@
         <div id="highscores">
             <h2><u>High Scores</u></h2>
             <hr>
-            <table id="score-list">
-                <thead>
-                    <tr>
-                        <th><u>Initials:</u></th>
-                        <th><u>Score:</u></th>
-                    </tr>
-                    <tr id="highscores-table">
-                        <!-- highscore data goes here -->
-                    </tr>
-                </thead>
-            </table>          
+            <div class="row">
+                <div class="col-6"><h5>Name:</h5></div>
+                <div class="col-6"><h5>Score:</h5></div>
+            </div>
+            <div class="row" id="score-list">
+
+                <div class="col">
+                    <ol id="initials-list">
+                        <!-- initials info goes here -->
+                    </ol>
+                </div>
+                <div class="col">
+                    <ul id="scores-list">
+                        <!-- scores info goes here -->
+                    </ul>
+                </div>
+            </div>
+        
         </div>
     </div>
 

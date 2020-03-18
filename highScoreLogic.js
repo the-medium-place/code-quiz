@@ -1,26 +1,31 @@
-
+var scoresList = document.querySelector("#scores-list");
+var initialsList = document.querySelector("#initials-list");
 var scoresTableEl = document.querySelector("#highscores-table");
-var userValues = [JSON.parse(localStorage.getItem("userValues"))];
-console.log(userValues);
+// var userValues = [JSON.parse(localStorage.getItem("userValues"))];
+// console.log(userValues);
 
 userValues = [];
 
+
 init();
+console.log(userValues[0].length);
 
 function highScores() {
-    for (let i = 0; i < userValues.length; i++) {
+    for (let i = 0; i < userValues[0].length; i++) {
 
         //create td element for user name and user score
-        var newUserTd = document.createElement("td");
-        var newScoreTd = document.createElement("td");
+        var newUserLi = document.createElement("li");
+        var newScoreLi = document.createElement("li");
+        // var newTr = document.createElement("tr")
+        
+        newUserLi.textContent = userValues[0][i].userName;
+        newScoreLi.textContent = userValues[0][i].userScore;
 
-        newUserTd.textContent = userValues[i].userName;
-        newScoreTd.textContent = userValues[i].userScore;
-        console.log(newUserTd, newScoreTd);
-        console.log(typeof newUserTd, typeof newScoreTd);
+        console.log(newUserLi, newScoreLi);
         //insert td element to high score page
-        scoresTableEl.appendChild(newUserTd);
-        scoresTableEl.appendChild(newScoreTd);
+        // scoresTableEl.appendChild(newTr)
+        initialsList.appendChild(newUserLi);
+        scoresList.appendChild(newScoreLi);
 
     }
 

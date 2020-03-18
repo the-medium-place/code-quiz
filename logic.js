@@ -16,7 +16,8 @@ var scoresTableEl = document.querySelector("#highscores-table");
 var userNameInput = document.querySelector("#userName-input");
 var userNameBtn = document.querySelector("#userName-btn");
 
-var userValues = [];
+
+var userValues = JSON.parse(localStorage.getItem("userValues") || "[]");
 
 
 init();
@@ -263,25 +264,27 @@ userNameBtn.addEventListener("click", function () {
    
 
     // save user info to object
-    var userObj = ({
+    var userObj = {
         userName: userNameInput.value,
         userScore: score
 
-    });
+    };
     // push user object to userValues array
     userValues.push(userObj);
+    console.log(userValues)
 
     // save userObj to localStorage
-    localStorage.setItem("userValues", JSON.stringify(userObj));
+    localStorage.setItem("userValues", JSON.stringify(userValues));
+    console.log(localStorage);
    
     // escape the do loop
     i++;
+
     // redirect to high score page
     window.location.href = "highscores.html";
 
 
 })
-
 
 
 
