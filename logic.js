@@ -1,168 +1,286 @@
 var myTimer;
+var questionCounter = 0;
 var score = 0;
+var wrongAnswer = 0;
+
 var startBtn = document.querySelector("#start");
 var startPage = document.querySelector("#start-page");
 var endPage = document.querySelector("#end-page");
-var answers = document.querySelector("#answers");
-var allQuestions = document.querySelectorAll(".question")
+var questionWindow = document.getElementById("question-window")
+var button1 = document.querySelector("#ans1");
+var button2 = document.querySelector("#ans2");
+var button3 = document.querySelector("#ans3");
+var button4 = document.querySelector("#ans4");
+var scoresTableEl = document.querySelector("#highscores-table");
+
+var userNameInput = document.querySelector("#userName-input");
+var userNameBtn = document.querySelector("#userName-btn");
+
+var userValues = [];
 
 
-// const question of allQuestions.keys()
+init();
 
 
-	for ( i=0; i<allQuestions.keys().length; i++) {
-	  console.log('question: ', i);
-	};
+function init() {
+    //get stored scores from localStorage
+    var storedValues = JSON.parse(localStorage.getItem("userValues"));
 
+    //if info retrieved from local, update local array
+    if (storedValues !== null) {
+        userValues.push(storedValues);
+    } else {
+        return;
+    }   
+   
+};
 
-
-// ***** QUESTION PAGES FUNCTION ***** //
-
-function questions() {
-    // create array of question divs 
-    var questionList = document.querySelectorAll("div.question");
-    console.log(questionList[0].id);
-
-    // cycle through array to show windows 
-    for (let i = 0; i<questionList.length; i++){
-        // if(questionsList[i] === ("q"+i))
-
-        console.log(i);
-
-        answers.addEventListener("click", function (event) {
-
-            // add event delegate for buttons
-            if (event.target.matches("button")) {
-                console.log(event.target.querySelector(".question"));
-                var quesWindow = event.target.parentElement.parentElement.parentElement.parentElement;
-
-                // make current page disappear
-                quesWindow.style.display = "none";
-
-                // event delegate button clicks to the id="correct";
-                var idEl = event.target.getAttribute("id");
-                if (idEl === "correct") {
-
-                    // if correct, add to score
-                    score++;
-                    console.log(event);
-                    console.log(score);
-
-                    // TODO: else subtract time
-                } else {
-                    console.log(event);
-
-
-                }
-
-            }
-
-        })
-
+// ARRAY OF ALL QUESTIONS 
+var questionsArr = [
+    {
+        questionText: "Which Turtle was the leader in Blue?",
+        answerOptions: ["Donatello", "Leonardo", "Michelangelo", "Raphael"],
+        correctAnswer: "Leonardo",
+    }, {
+        questionText: "What About the \"Party Dude\" in Orange?",
+        answerOptions: ["Raphael", "Donatello", "Michelangelo", "Leonardo"],
+        correctAnswer: "Michelangelo",
+    }, {
+        questionText: "Can you name the brainiac in Purple?",
+        answerOptions: ["Michelangelo", "Leonardo", "Raphael", "Donatello"],
+        correctAnswer: "Donatello",
+    }, {
+        questionText: "Who is \"Cool but Rude\" in Red?",
+        answerOptions: ["Raphael", "Michelangelo", "Donatello", "Leonardo"],
+        correctAnswer: "Raphael",
+    }, {
+        questionText: "What was the evil gang the Turtles are always fighting?",
+        answerOptions: ["The Hand", "League of Assassins", "Foot Clan", "GOP"],
+        correctAnswer: "Foot Clan",
+    }, {
+        questionText: "Casey Jones is the Turtles' tough fightin' human friend! What kind of sports equipment does he use?",
+        answerOptions: ["Football", "Hockey", "Lacrosse", "Soccer"],
+        correctAnswer: "Hockey",
+    }, {
+        questionText: "Who are the incompetent badguy henchmen who were once human gang members?",
+        answerOptions: ["Tokka and Rahzar", "Abercrombie and Finch", "Trump / Pence", "Bebop and Rocksteady"],
+        correctAnswer: "Bebop and Rocksteady",
+    }, {
+        questionText: "Which 90's Rapper performed the best and most popular rap song ever written for a movie about teenage crime fighting turtles? (Go, Ninja, Go, Ninja, Go!",
+        answerOptions: ["Vanilla Ice", "Ice Cube", "Fro-Zone", "Ice-T"],
+        correctAnswer: "Vanilla Ice",
+    }, {
+        questionText: "What substance is responsible for the Turtles' transformation, and many others?",
+        answerOptions: ["Goop", "Ooze", "Slop", "COVID-19"],
+        correctAnswer: "Ooze",
     }
+];
 
+// LISTEN TO BUTTONS AND UPDATE SCORE
+function buttonListen() {
+    // event listener for answer-btn
+    button1.addEventListener("click", function () {
+        var userClick = this.innerHTML;
+        var correctAns = questionsArr[questionCounter - 1].correctAnswer;
+        //check if answer value matches correct value
+        if (userClick === correctAns) {
+            console.log(userClick, typeof userClick);
+            console.log(correctAns, typeof correctAns);
+            score++;
+            displayQuestion();
+        } else {
+            console.log(userClick);
+            console.log(correctAns);
+            wrongAnswer++;
+            displayQuestion();
+        }
+
+    });
+    button2.addEventListener("click", function () {
+        var userClick = this.innerHTML;
+        var correctAns = questionsArr[questionCounter - 1].correctAnswer;
+        //check if answer value matches correct value
+        if (userClick === correctAns) {
+            score++;
+            console.log(userClick);
+            console.log(correctAns);
+            displayQuestion();
+        } else {
+            wrongAnswer++;
+            console.log(userClick);
+            console.log(correctAns);
+            displayQuestion();
+        }
+
+    });
+    button3.addEventListener("click", function () {
+        var userClick = this.innerHTML;
+        var correctAns = questionsArr[questionCounter - 1].correctAnswer;
+        //check if answer value matches correct value
+        if (userClick === correctAns) {
+            score++;
+            console.log(userClick);
+            console.log(correctAns);
+            displayQuestion();
+        } else {
+            wrongAnswer++;
+            console.log(userClick);
+            console.log(correctAns);
+            displayQuestion();
+        }
+
+    });
+    button4.addEventListener("click", function () {
+        var userClick = this.innerHTML;
+        var correctAns = questionsArr[questionCounter - 1].correctAnswer;
+        //check if answer value matches correct value
+        if (userClick === correctAns) {
+            score++;
+            console.log(userClick);
+            console.log(correctAns);
+            displayQuestion();
+        } else {
+            wrongAnswer++;
+            console.log(userClick);
+            console.log(correctAns);
+            displayQuestion();
+        }
+
+    });
+
+    console.log(this);
+
+    // if so add one point++ then displayQuestion()
+
+    //if answer value does not equal the correct value, displayQuestion()
 
 }
 
 
-//START BUTTON STARTS TIMER
-function startQuiz() {
-    startPage.style.display = "none";
-    document.getElementById("q0").style.display = "block";
+// GAME TIMER
+function timer() {
     myTimer = setInterval(timer, 1000);
-    var counter = 20;
+
+    // !** MAIN GAME TIMER VARIABLE **! //
+    var counter = 30;
+
     // COUNTER COUNTS AND LINKS TO TEXT ON PAGE
     function timer() {
-        if (counter) {
+        if (counter < 0) {
+            counter = 0;
+        } else if (counter > 0) {
             document.getElementById("timer-text").innerHTML = "Time Remaining: " + counter + " sec";
-  
+            document.getElementById("score").innerHTML = "Score: " + score;
             counter--;
         } else {
-            //COUNTER REACHES ZER00000000
-            document.getElementById("timer-text").innerHTML = "Time Remaining: 0 sec";
-            document.getElementById("score").innerHTML = "Score: " + score;
-            console.log(score);
             clearInterval(myTimer);
 
-            // HIDE ALL QUESTION PAGES
-            for(i=0;i<allQuestions.length;i++){
-                allQuestions[i].style.display = "none";
-            }
-            
-            // SEND USER TO END PAGE
+            //COUNTER REACHES ZER00000000
+            document.getElementById("timer-text").innerHTML = "Time Remaining: 0 sec";
+            document.getElementById("final-score").innerHTML = "Score: " + score;
+            // window.location.href = "highscores.html";
             endPage.style.display = "block";
 
 
+            // SAVE USER INFO AND SCORE TO LOCAL OBJECT
+            var userObj = {
+                userName: localStorage.getItem("userName"),
+                userScore: localStorage.getItem("userScore")
+            };
+           
+            // localStorage.setItem("userObj", userObj);
+
+
+
+            // HIDE QUESTION PAGE
+            questionWindow.style.display = "none";
+
+            // SEND USER TO END PAGE
+            endPage.style.display = "block";
+            console.log(localStorage);
+
         }
+
+        // REMOVE TIME FOR WRONG ANSWER
+        if (wrongAnswer === 1) {
+            counter -= 5;
+            wrongAnswer--;
+        }
+
+    }
+}
+
+// MOVE TO NEXT QUESTION
+function displayQuestion() {
+    //target elements to update
+    var title = document.querySelector("#question-title");
+    var text = document.querySelector("#question-text");
+
+    //update targets
+    title.textContent = "question number " + (questionCounter + 1);
+    text.textContent = questionsArr[questionCounter].questionText;
+
+    //loop to update answer buttons
+    for (i = 0; i < 4; i++) {
+        //target the button
+        var button = document.querySelector("#ans" + (i + 1));
+        //update the text
+        button.textContent = questionsArr[questionCounter].answerOptions[i];
     }
 
-    // invoke questions function to start quiz
-    questions();
+    questionCounter++;
 
+}
+
+// !!***START BUTTON STARTS TIMER***!! //
+
+function startQuiz() {
+
+    //hide start page
+    startPage.style.display = "none";
+
+    // display question page
+    questionWindow.style.display = "block";
+
+    //start timer
+    timer();
+    //populate questions
+    displayQuestion();
+    //listen for clicks
+    buttonListen();
 }
 
 
 
+////   EVENT LISTENERS     ////
 
+//  quiz start button
+startBtn.addEventListener("click", startQuiz);
 
-// array of all question div ids
-// var queIds = ['q0', 'q1', 'q2', 'q3', 'q4'];
-
-function next() {
-    var qElems = [];
-    //looping through array of question div elements
-    for (var i = 0; i < allQuestions.length; i++) {
-        // pushing elements of associated ids to empty array
-        qElems.push(allQuestions[i]);   
-    }   // same loop again??????FIXME:
-    for (var i = 0; i < allQuestions.length; i++) {
-        
-        // **** FOR EVERY LOOP ****//
-        
-        //   if(current window display = "block")
-        if (qElems[i].style.display === 'block') {
-            // change it to 'none'
-            qElems[i].style.display = "none";
-            // change the 1 to a 0
-
-            // if value of i is last element of array
-            if (i == allQuestions.length - 1) {
-                // send to end page
-                endPage.style.display = "block";
-                // change first value of 'showing' back to 1
+//   username submit button
+userNameBtn.addEventListener("click", function () {
+    event.preventDefault();
    
-            } else {
-                qElems[i + 1].style.display = "block";
-        
-            }
-            break;
-        }
-    }      
-}
 
-// console.log(questionList[0].id);
-var testerButton = document.getElementById("testerButton");
+    // save user info to object
+    var userObj = ({
+        userName: userNameInput.value,
+        userScore: score
 
-testerButton.addEventListener("click", next);
+    });
+    // push user object to userValues array
+    userValues.push(userObj);
 
-startBtn.addEventListener("click", startQuiz); 
-
-
-
-
-//TODO: adjust timer and score dynamically to answers
+    // save userObj to localStorage
+    localStorage.setItem("userValues", JSON.stringify(userObj));
+   
+    // escape the do loop
+    i++;
+    // redirect to high score page
+    window.location.href = "highscores.html";
 
 
-//TODO: or delete time for a wrong answer
-
-
-
-
-//TODO: display score and store locally with user name
-
-
-//TODO: display scores on high score page
-//TODO: order scores by value!!
+})
 
 
 
