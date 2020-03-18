@@ -19,23 +19,6 @@ var userNameBtn = document.querySelector("#userName-btn");
 
 var userValues = JSON.parse(localStorage.getItem("userValues") || "[]");
 
-
-init();
-
-
-function init() {
-    //get stored scores from localStorage
-    var storedValues = JSON.parse(localStorage.getItem("userValues"));
-
-    //if info retrieved from local, update local array
-    if (storedValues !== null) {
-        userValues.push(storedValues);
-    } else {
-        return;
-    }   
-   
-};
-
 // ARRAY OF ALL QUESTIONS 
 var questionsArr = [
     {
@@ -76,6 +59,23 @@ var questionsArr = [
         correctAnswer: "Ooze",
     }
 ];
+
+init();
+
+// CHECK FOR LOCAL DATA
+function init() {
+    //get stored scores from localStorage
+    var storedValues = JSON.parse(localStorage.getItem("userValues"));
+
+    //if info retrieved from local, update local array
+    if (storedValues !== null) {
+        userValues.push(storedValues);
+    } else {
+        return;
+    }   
+   
+};
+
 
 // LISTEN TO BUTTONS AND UPDATE SCORE
 function buttonListen() {
@@ -157,7 +157,6 @@ function buttonListen() {
 
 }
 
-
 // GAME TIMER
 function timer() {
     myTimer = setInterval(timer, 1000);
@@ -181,17 +180,6 @@ function timer() {
             document.getElementById("final-score").innerHTML = "Score: " + score;
             // window.location.href = "highscores.html";
             endPage.style.display = "block";
-
-
-            // SAVE USER INFO AND SCORE TO LOCAL OBJECT
-            var userObj = {
-                userName: localStorage.getItem("userName"),
-                userScore: localStorage.getItem("userScore")
-            };
-           
-            // localStorage.setItem("userObj", userObj);
-
-
 
             // HIDE QUESTION PAGE
             questionWindow.style.display = "none";
@@ -255,10 +243,10 @@ function startQuiz() {
 
 ////   EVENT LISTENERS     ////
 
-//  quiz start button
+//  quiz start button   //
 startBtn.addEventListener("click", startQuiz);
 
-//   username submit button
+//   username submit button   //
 userNameBtn.addEventListener("click", function () {
     event.preventDefault();
    

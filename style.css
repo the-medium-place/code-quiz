@@ -64,10 +64,10 @@ body {
 
 #score-list {
   
-    width: 100%;
+    width: 85%;
     
     margin: 0 auto;
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
 
 
