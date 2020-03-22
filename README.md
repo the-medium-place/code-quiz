@@ -64,4 +64,6 @@ After a tutoring session I was able to refactor my code into its current form, w
     * I set listeners at the bottom for the Start button and the button to submit user info.
 
 
+**Retro Screen CSS styling:** https://css-tricks.com/old-timey-terminal-styling/
+
 ## Thank You!
